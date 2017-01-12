@@ -27,10 +27,15 @@
   <script type="text/javascript">
       var theDiv = document.getElementById("name");
       var words = ["Provider", "Resolver", "Wrapper", "Identifier", "Factory", "Service", "Configuration", "Builder", "Client"];
-      var prefix = ["Pim", "Legacy", "Document", "Product", "Pricing", "Page", "Default"];
-      var prefixIndex = Math.floor(Math.random() * prefix.length);
-      var numOfWords = Math.floor(Math.random() * 5) + 3;
-      var innerHTML = prefix[prefixIndex]
+      var superPrefix = ["Pim", "Legacy", "Default", "Studio"];
+      var prefix = ["Document", "Product", "Pricing", "Page", "Colorization", "Validation", "Context", "Font", "Text", "Finish", "Image"];
+      var superPrefixIndex = Math.floor(Math.random() * superPrefix.length);
+      var numOfWords = Math.floor(Math.random() * 3) + 1;
+      var numOfPrefix = Math.floor(Math.random() * 3) + 1;
+      var innerHTML = superPrefix[superPrefixIndex]
+      for (var i = 0; i <= numOfPrefix; i++){
+        innerHTML += prefix.splice(Math.floor(Math.random() * prefix.length), 1)[0];
+      }
       for (var i = 0; i <= numOfWords; i++){
         innerHTML += words.splice(Math.floor(Math.random() * words.length), 1)[0];
       }
