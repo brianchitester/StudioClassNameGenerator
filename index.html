@@ -25,19 +25,16 @@
   <h2 id="name"></h2>
   <p>hit refresh to regenerate</p>
   <script type="text/javascript">
-      var theh2 = document.getElementById("name");
+      var theDiv = document.getElementById("name");
       var words = ["Provider", "Resolver", "Wrapper", "Identifier", "Factory", "Service", "Configuration", "Builder", "Client"];
       var prefix = ["Pim", "Legacy", "Document", "Product", "Pricing", "Page", "Default"];
       var prefixIndex = Math.floor(Math.random() * prefix.length);
       var numOfWords = Math.floor(Math.random() * 5) + 3;
       var innerHTML = prefix[prefixIndex]
       for (var i = 0; i <= numOfWords; i++){
-        var index = Math.floor((i + (Math.random() * words.length)) % words.length);
-        console.log(index);
-        innerHTML = innerHTML + words[index];
+        innerHTML += words.splice(Math.floor(Math.random() * words.length), 1)[0];
       }
-
-      theh2.innerHTML = innerHTML;
+      theDiv.innerHTML = innerHTML;
   </script>
 </body>
 </html>
