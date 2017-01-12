@@ -32,7 +32,10 @@
       var superPrefixIndex = Math.floor(Math.random() * superPrefix.length);
       var numOfWords = Math.floor(Math.random() * 3) + 1;
       var numOfPrefix = Math.floor(Math.random() * 3) + 1;
-      var innerHTML = superPrefix[superPrefixIndex]
+      var innerHTML = "";
+      if (Math.floor(Math.random() * 4) != 1){
+        innerHTML = superPrefix[superPrefixIndex];
+      }
       for (var i = 0; i <= numOfPrefix; i++){
         innerHTML += prefix.splice(Math.floor(Math.random() * prefix.length), 1)[0];
       }
